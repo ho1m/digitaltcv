@@ -1,1 +1,77 @@
-<p>contact-me works!</p>
+<div class="contactme w-100 view d-flex align-items-center justify-content-center">
+  <div class="contactme__content container">
+
+    <h2 class="mb-2">Kontakta mig</h2>
+    <form [formGroup]="contactForm" (ngSubmit)="onSubmit()" class="bg-light p-3 w-100">
+
+      <div class="mb-3">
+        <label for="name" class="form-label">Namn*: </label>
+        <input
+        type="text"
+        class="form-control"
+        id="name"
+        formControlName="name"
+        placeholder="Namn Namnsson"
+        [class.is-invalid]="contactForm.controls.name.invalid && contactForm.controls.name.touched"
+        >
+
+        <div class="form-text" *ngIf="contactForm.controls.name.invalid && contactForm.controls.name.touched">
+          <span *ngIf="!contactForm.controls.name.value">Namn fältet får inte vara tomt</span>
+          <span *ngIf="contactForm.controls.name.value">Namnet ska ha fler än 3 bokstäver</span>
+        </div>
+
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email*: </label>
+        <input 
+        type="email" 
+        class="form-control" 
+        id="email" 
+        formControlName="email" 
+        placeholder="namn@company.com"
+        [class.is-invalid]="contactForm.controls.email.invalid && contactForm.controls.email.touched"
+        >
+
+        <div class="form-text" *ngIf="contactForm.controls.email.invalid && contactForm.controls.email.touched">
+          <span *ngIf="!contactForm.controls.email.value">Email fältet får inte vara tomt</span>
+          <span *ngIf="contactForm.controls.email.value">Skriv en giltig email</span>
+        </div>
+
+      </div>
+
+      <div class="mb-3">
+        <label for="subject" class="form-label">Ämne: </label>
+        <input 
+        type="text" 
+        class="form-control" 
+        id="subject" 
+        formControlName="subject" 
+        placeholder="Lorem ipsum dolor sit amet."
+        
+        >
+      </div>
+
+      <div class="mb-3">
+        <label for="message" class="form-label">Meddelande*: </label>
+        <textarea 
+        class="form-control" 
+        id="message" 
+        rows="5" 
+        formControlName="message" 
+        placeholder="Lorem ipsum dolor sit amet consectetur, adipisicing elit. Fugiat eaque sed obcaecati quibusdam inventore dolorum corporis facilis alias odio autem quidem nihil."
+        [class.is-invalid]="contactForm.controls.message.invalid && contactForm.controls.message.touched"
+        >
+        </textarea>
+
+        <div class="form-text" *ngIf="contactForm.controls.message.invalid && contactForm.controls.message.touched">
+          <span *ngIf="!contactForm.controls.message.value">Meddelande fältet får inte vara tomt</span>
+        </div>
+      </div>
+
+      <button type="submit" class="btn btn-dark" [disabled]="!contactForm.valid">Skicka meddelande</button>
+      
+    </form>
+    
+  </div>
+</div>

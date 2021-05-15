@@ -8,6 +8,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 import { AboutMeComponent } from './about-me/about-me.component';
 import { ContactMeComponent } from './contact-me/contact-me.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,8 @@ import { NavbarComponent } from './navbar/navbar.component';
       {path: 'aboutme', component: AboutMeComponent},
       {path: 'contactme', component: ContactMeComponent},
     ]),
+    ReactiveFormsModule,
+    FormsModule,
   ],
   providers: [],
   bootstrap: [AppComponent]
