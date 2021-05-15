@@ -1,0 +1,29 @@
+section {
+  margin: 2em 0;
+}
+
+section h2 {
+  text-decoration: underline;
+}
+
+.sec__item {
+  margin-bottom: 1.5rem;
+}
+
+.sec__item p {
+  margin: 0.2em 0;
+}
+
+.sec__item h5 {
+  margin: 0;
+}
+
+.profilePic__container {
+  background-image: url("https://media-exp1.licdn.com/dms/image/C4D03AQF3g_jVhY4_Ww/profile-displayphoto-shrink_800_800/0/1616784173189?e=1626307200&v=beta&t=gCeCKhFPlCi9qJfGPhAFFdaO2_XPLTY_oRhKUuDpqrw");
+  background-size: cover;
+  background-position: center;
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  margin: 1em auto;
+}
