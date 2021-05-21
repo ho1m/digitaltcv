@@ -14,6 +14,12 @@ section h2 {
   margin: 1.5rem 0;
 }
 
+@media (max-width: 480px) {
+  .sec__item {
+    max-width: 100%;
+  }
+}
+
 .sec__item p {
   margin: 0.2em 0;
 }
